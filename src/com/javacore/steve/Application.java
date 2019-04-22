@@ -5,6 +5,7 @@ import com.javacore.steve.command.CommandContext;
 import com.javacore.steve.command.CommandRegistry;
 import com.javacore.steve.executor.CommandExecutor;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 
@@ -40,6 +41,7 @@ public class Application {
         if (command == null)
             throw new RuntimeException("Command " + commandName + " is not found");
 
-        return new CommandContext(command);
+        String[] params = Arrays.copyOfRange(words, 1, words.length);
+        return new CommandContext(command, params);
     }
 }

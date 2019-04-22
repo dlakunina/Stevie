@@ -1,7 +1,6 @@
 package com.javacore.steve.command;
 
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.Map;
 
 public enum CommandRegistry {
@@ -19,11 +18,25 @@ public enum CommandRegistry {
 
     static {
         commands = new HashMap<>();
-        commands.put("version", new com.javacore.steve.command.CommandVersion("version"));
-        commands.put("author", new com.javacore.steve.command.CommandAuthor("author"));
-        commands.put("creator", new com.javacore.steve.command.CommandAuthor("creator"));
-        commands.put("father", new com.javacore.steve.command.CommandAuthor("father"));
+        commands.put("version", new CommandVersion("version"));
+        commands.put("author", new CommandAuthor("author"));
+        commands.put("creator", new CommandAuthor("creator"));
+        commands.put("father", new CommandAuthor("father"));
         commands.put("exit", new CommandExit());
+        commands.put("bye", new CommandExit());
+        commands.put("help", new HelpCommand());
+        commands.put("show", new ShowCommand());
+    }
+
+    /**
+     * prints out all the supported commands
+     */
+    public static void listCommands() {
+        for (Map.Entry<String, Command> entry : commands.entrySet()) {
+            System.out.println(entry.getKey());
+            if (entry.getValue().description != null)
+                System.out.println("\t* " + entry.getValue().description);
+        }
     }
 
     /**
@@ -44,16 +57,5 @@ public enum CommandRegistry {
      */
     public Command getCommand(String name) {
         return commands.get(name);
-    }
-
-    /**
-     * prints out all the supported commands
-     */
-    public void listCommands() {
-        Iterator it = commands.entrySet().iterator();
-        while (it.hasNext()) {
-            Map.Entry entry = (Map.Entry) it.next();
-            System.out.println(entry.getKey());
-        }
     }
 }

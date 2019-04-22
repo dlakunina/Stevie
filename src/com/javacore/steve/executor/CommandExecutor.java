@@ -4,6 +4,7 @@ import com.javacore.steve.command.CommandContext;
 
 public class CommandExecutor {
     public void run(CommandContext commandContext) {
-        commandContext.getCommand().execute();
+        commandContext.getCommand().execute(commandContext.getParams());
+
     }
 }

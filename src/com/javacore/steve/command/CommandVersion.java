@@ -11,7 +11,7 @@ public class CommandVersion extends Command {
      * constructs the CommandVersion
      * @param name the name of the command (i.e. the "version")
      */
-    public CommandVersion(String name){
+    CommandVersion(String name) {
 
         super(name);
     }
@@ -20,7 +20,7 @@ public class CommandVersion extends Command {
      * The method prints out the version of the program
      */
     @Override
-    public void execute (){
+    public void execute(String[] params) {
 
         System.out.println("My version is " + VERSION);
     }
