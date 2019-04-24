@@ -1,6 +1,6 @@
 package com.javacore.steve.command;
 
-import com.javacore.steve.canvas.ConsoleCanvas;
+import com.javacore.steve.profile.ProfileController;
 
 import java.util.Map;
 
@@ -16,11 +16,8 @@ public class ShowCommand extends Command {
 
     private void showProfile(String id) {
         System.out.println("Showing profile with id '" + id + "'");
-        ConsoleCanvas canvas = new ConsoleCanvas(20, 40);
 
-
-        canvas.drawCircle(10, 7, 5);
-        canvas.drawSquare(15, 2, 10);
-        canvas.draw();
+        ProfileController profileController = new ProfileController();
+        profileController.showProfile(Integer.parseInt(id));
     }
 }

@@ -28,7 +28,7 @@ public class ConsoleCanvas extends Canvas {
         }
     }
 
-    public void draw() {
+    private void draw() {
         for (int row = 0; row < height; row++) {
             for (int col = 0; col < width; col++) {
                 System.out.print(pixels[row][col]);
@@ -39,8 +39,10 @@ public class ConsoleCanvas extends Canvas {
     }
 
 
-    public void drawText(String text) {
-        System.out.println(text);
+    public void drawText(int row, String text) {
+        int col = 0;
+        for (char ch : text.toCharArray())
+            pixels[row][col++] = ch;
     }
 
 
@@ -69,18 +71,11 @@ public class ConsoleCanvas extends Canvas {
 
         }
     }
-    /*public void drawSquare(int size) {
-        if (size < 2) {
-            System.out.println("No square of such size allowed");
-        }
-        System.out.print("\n");
-        for (int i = 0; i < size; i++) {
-            System.out.print("#");
-        }
 
-        for (int i = 0; i < size - 1; i++) {
-            System.out.print("");
-        }
-    }*/
+    @Override
+    public void finalizeDraw() {
+        draw();
+    }
+
 
 }
