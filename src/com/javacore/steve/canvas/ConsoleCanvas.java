@@ -1,6 +1,7 @@
 package com.javacore.steve.canvas;
 
 public class ConsoleCanvas extends Canvas {
+    private char drawSymbol = '◼';
 
     private char[][] pixels;
     private int width;
@@ -12,7 +13,7 @@ public class ConsoleCanvas extends Canvas {
         init();
     }
 
-    public void init() {
+    private void init() {
         pixels = new char[height][width];
         reset();
 
@@ -53,7 +54,7 @@ public class ConsoleCanvas extends Canvas {
     private void drawLine(int x, int y, int xend, int yend) {
         for (int row = x; row <= xend; row++) {
             for (int col = y; col <= yend; col++) {
-                pixels[row][col] = '#';
+                pixels[row][col] = drawSymbol;
             }
         }
     }
@@ -63,7 +64,7 @@ public class ConsoleCanvas extends Canvas {
             for (int y = 0; y < width; y++) {
                 int sqDist = (cx - x) * (cx - x) + (cy - y) * (cy - y);
                 if (sqDist <= radius * radius)
-                    pixels[x][y] = '#';
+                    pixels[x][y] = drawSymbol;
             }
 
         }

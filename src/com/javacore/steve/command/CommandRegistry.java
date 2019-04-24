@@ -18,12 +18,12 @@ public enum CommandRegistry {
 
     static {
         commands = new HashMap<>();
-        commands.put("version", new CommandVersion("version"));
-        commands.put("author", new CommandAuthor("author"));
-        commands.put("creator", new CommandAuthor("creator"));
-        commands.put("father", new CommandAuthor("father"));
-        commands.put("exit", new CommandExit());
-        commands.put("bye", new CommandExit());
+        commands.put("version", new VersionCommand("version"));
+        commands.put("author", new AuthorCommand("author"));
+        commands.put("creator", new AuthorCommand("creator"));
+        commands.put("father", new AuthorCommand("father"));
+        commands.put("exit", new ExitCommand());
+        commands.put("bye", new ExitCommand());
         commands.put("help", new HelpCommand());
         commands.put("show", new ShowCommand());
     }

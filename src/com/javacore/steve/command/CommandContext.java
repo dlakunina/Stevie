@@ -1,10 +1,12 @@
 package com.javacore.steve.command;
 
+import java.util.Map;
+
 public class CommandContext {
     private Command command;
-    private String[] params;
+    private Map<String, String> params;
 
-    public CommandContext(Command command, String[] params) {
+    public CommandContext(Command command, Map<String, String> params) {
         this.command = command;
         this.params = params;
     }
@@ -13,7 +15,7 @@ public class CommandContext {
         return command;
     }
 
-    public String[] getParams() {
+    public Map<String, String> getParams() {
         return params;
     }
 }

@@ -1,5 +1,7 @@
 package com.javacore.steve.command;
 
+import java.util.Map;
+
 public abstract class Command {
     public String name;
     public String description;
@@ -13,5 +15,5 @@ public abstract class Command {
         this.description = description;
     }
 
-    public abstract void execute(String[] params);
+    public abstract void execute(Map<String, String> params);
 }

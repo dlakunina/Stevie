@@ -6,6 +6,7 @@ import com.javacore.steve.command.CommandRegistry;
 import com.javacore.steve.executor.CommandExecutor;
 
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.Scanner;
 
 
@@ -33,6 +34,9 @@ public class Application {
         }
     }
 
+    //parses command line e.g. "show id 2" into:
+    // command: ShowCommand
+    //params map: id -> 2
     private static CommandContext parseCommand(String commandString) {
         String[] words = commandString.split("\\s+");
         String commandName = words[0];
@@ -41,7 +45,14 @@ public class Application {
         if (command == null)
             throw new RuntimeException("Command " + commandName + " is not found");
 
+        //every key is followed by the corresponding value
         String[] params = Arrays.copyOfRange(words, 1, words.length);
-        return new CommandContext(command, params);
+        HashMap<String, String> paramsMap = new HashMap<>();
+        for (int iP = 0; iP < params.length; iP += 2) {
+            paramsMap.put(params[iP], params[iP + 1]);
+        }
+
+
+        return new CommandContext(command, paramsMap);
     }
 }

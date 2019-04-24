@@ -1,17 +1,20 @@
 package com.javacore.steve.command;
 
+import java.util.Map;
+
 import static com.javacore.steve.Application.VERSION;
 
 /**
  * The command that outputs the current version of the program
  */
-public class CommandVersion extends Command {
+public class VersionCommand extends Command {
 
     /**
-     * constructs the CommandVersion
+     * constructs the VersionCommand
+     *
      * @param name the name of the command (i.e. the "version")
      */
-    CommandVersion(String name) {
+    VersionCommand(String name) {
 
         super(name);
     }
@@ -20,7 +23,7 @@ public class CommandVersion extends Command {
      * The method prints out the version of the program
      */
     @Override
-    public void execute(String[] params) {
+    public void execute(Map<String, String> params) {
 
         System.out.println("My version is " + VERSION);
     }
