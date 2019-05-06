@@ -2,8 +2,8 @@ package com.javacore.steve;
 
 import com.javacore.steve.command.Command;
 import com.javacore.steve.command.CommandContext;
-import com.javacore.steve.command.CommandRegistry;
-import com.javacore.steve.executor.CommandExecutor;
+import com.javacore.steve.command.CommandExecutor;
+import com.javacore.steve.command.commands.CommandRegistry;
 
 import java.util.Arrays;
 import java.util.HashMap;

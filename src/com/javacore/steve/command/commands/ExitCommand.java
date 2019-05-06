@@ -1,4 +1,6 @@
-package com.javacore.steve.command;
+package com.javacore.steve.command.commands;
+
+import com.javacore.steve.command.Command;
 
 import java.util.Map;
 

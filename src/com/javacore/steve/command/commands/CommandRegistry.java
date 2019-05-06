@@ -1,4 +1,6 @@
-package com.javacore.steve.command;
+package com.javacore.steve.command.commands;
+
+import com.javacore.steve.command.Command;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -26,6 +28,7 @@ public enum CommandRegistry {
         commands.put("bye", new ExitCommand());
         commands.put("help", new HelpCommand());
         commands.put("show", new ShowCommand());
+        commands.put("sleep", new SleepCommand());
     }
 
     /**

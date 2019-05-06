@@ -1,5 +1,6 @@
-package com.javacore.steve.command;
+package com.javacore.steve.command.commands;
 
+import com.javacore.steve.command.Command;
 import com.javacore.steve.profile.ProfileController;
 
 import java.util.Map;
