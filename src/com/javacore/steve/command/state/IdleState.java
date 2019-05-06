@@ -21,9 +21,8 @@ public class IdleState extends CommandExecutionState {
                     }
                 };
         System.out.println("Started execution of command '" + commandContext.getCommand().name + "'");
-        thread.start();
-
         stateContext.setState(new RunningState(stateContext, commandContext));
+        thread.start();
     }
 
     @Override
