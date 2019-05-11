@@ -49,7 +49,7 @@ public class DataBase {
 
     public void init() {
 
-        String absolutePath = "/home/dasha/IdeaProjects/Stevie/resources/Criminals.tbl";
+        String absolutePath = "/home/dasha/IdeaProjects/Stevie/SteveConsole/resources/Criminals.tbl";
 
         List<String[]> records = readDataFile(absolutePath);
         Table criminalTable = tables.get("Criminals");

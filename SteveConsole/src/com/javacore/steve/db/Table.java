@@ -7,12 +7,12 @@ import java.util.List;
 public class Table {
     protected String name;
 
-    protected List<String> columns;
+    private List<String> columns;
 
-    protected List<Record> records;
+    private List<Record> records;
 
     {
-        records = new ArrayList<Record>();
+        records = new ArrayList<>();
     }
 
     public Table(String name, List<String> columns) {
@@ -46,9 +46,7 @@ public class Table {
 
     public Record select(String fieldName, String fieldValue) {
         int index = columns.indexOf(fieldName);
-        Iterator it = records.iterator();
-        while (it.hasNext()) {
-            Record r = (Record) it.next();
+        for (Record r : records) {
             String recordValue = r.values.get(index);
             if (recordValue.equals(fieldValue))
                 return r;
