@@ -1,16 +1,11 @@
 package com.javacore.steve.profile;
 
-import com.javacore.steve.db.DataBase;
-import com.javacore.steve.db.Record;
-import com.javacore.steve.db.Table;
-
 import java.util.HashMap;
 import java.util.Map;
 
 public enum ProfileStore {
     INSTANCE;
 
-    static DataBase db = new DataBase();
     Map<Integer, ProfileModel> profiles;
 
     {
